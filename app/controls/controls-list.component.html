@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+</div>
+<div class="panel-body">
+    <!--<form class="form-horizontal">
+    <div class="form-group">
+        <label for="listFilter">Filter By </label>
+        <input class="form-control" type="text" [(ngModel)]='listFilter' name="listFilter" id="listFilter"/>
+    </div>
+    </form>-->
+    <div class="panel">
+        <div class="panel panel-primary">
+            <b class="col-md-2 panel-primary">Control Id</b>
+            <b class="col-md-4 panel-primary">Description</b>
+            <b class="col-md-2 panel-primary">Type</b>
+            <b class="col-md-2 panel-primary"> Modified Date</b>
+            <b class="col-md-2 panel-primary">Modified By</b>
+
+        </div>
+        <a *ngFor='let control of controls'  href="#" class="display:block; panel-info">
+        <div ng-class-odd="'panel-e'">
+            <span class="col-md-2">{{ control.controlId }}</span>
+            <span class="col-md-4">{{ control.description }}</span>
+            <span class="col-md-2">{{ control.controlType }}</span>
+            <span class="col-md-2">{{ control.modifiedDate }}</span>
+            <span class="col-md-2">{{ control.modifiedBy }}</span>
+        </div>
+        </a>
+
+</div>
