@@ -12,44 +12,27 @@
             </div>
         </div>
     </div>
-
-    <!--<div id="navbar">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header" style="background: #0054a0;">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target="#collapsing-navbar" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <div class="logo pull-left visible-xs-block"></div>
-                    <div class="spacer pull-left visible-xs-block"></div>
-                    <a class="navbar-brand visible-xs-block" href="#/"> {{ applicationTitle }} </a>
-                </div>-->
-
-                <!--<div class="collapse navbar-collapse" id="collapsing-navbar">
-                    <span ng-if="menuItem.items!=null && menulevel == 0" class="caret"></span>
-                    <ul class="nav navbar" *ngFor='let menuItem of menuItems'>
-                        <li class="menu-item"> <a class="dropdown-toggle" [href]='menuItem.target'></a></li>
-                    </ul>
-                </div>-->
-            <!--</div>
-        </nav>
-    </div>-->
-
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Controls</a></li>
-                <li><a href="#">Objects</a></li>
-                <li><a href="#">Admin</a></li>
-            </ul>
-        </div>
-    </nav>
-
+<div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Controls</a></li>
+        <li><a href="#">Objects</a></li>
+        <li><a href="#">System Admin</a></li> 
+        <li><a href="#">User Admin</a></li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
 
     <div id="content-container" class="container">
         <div class="row" id="content">
