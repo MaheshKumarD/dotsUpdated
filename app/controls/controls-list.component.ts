@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { IControl } from './IControl';
+import { ControlService } from './control.service';
+import { OnInit } from  '@angular/core';
 
 @Component({
     selector: "audit-controls",
@@ -7,82 +9,23 @@ import { IControl } from './IControl';
     templateUrl: 'controls-list.component.html'
 })
 export class ControlsListComponent {
+    constructor(private _controlService : ControlService) {
+
+    }
+
     pageTitle: string = "Audit Controls List";
+    errorMessage: string;
     listFilter: string = '';
-    controls : IControl[] = [
-        {
-                "controlId" : "CTRL-001",
-                "description": "Sample Controls for testing",
-                "controlType" : "SOX CONTROL",
-                "modifiedDate" : "Trilok",
-                "modifiedBy" : "1/1/2017"
-        },
-        {
-                "controlId" : "CTRL-002",
-                "description": "SOX Controls for Module 02",
-                "controlType" : "SOX CONTROL",
-                "modifiedDate" : "Trilok",
-                "modifiedBy" : "1/1/2017"
-        },
-        {
-                "controlId" : "CTRL-003",
-                "description": "SOX Controls for Module 03",
-                "controlType" : "SOX CONTROL",
-                "modifiedDate" : "Trilok",
-                "modifiedBy" : "1/1/2017"
-        },
-        {
-                "controlId" : "CTRL-004",
-                "description": "SOX Controls for Module 04",
-                "controlType" : "SOX CONTROL",
-                "modifiedDate" : "Trilok",
-                "modifiedBy" : "1/1/2017"
-        },
-        {
-                "controlId" : "CTRL-005",
-                "description": "SOX Controls for Module 05",
-                "controlType" : "SOX CONTROL",
-                "modifiedDate" : "Trilok",
-                "modifiedBy" : "1/1/2017"
-        },
-        {
-                "controlId" : "CTRL-006",
-                "description": "SOX Controls for Module 06",
-                "controlType" : "SOX CONTROL",
-                "modifiedDate" : "Trilok",
-                "modifiedBy" : "1/1/2017"
-        },
-        {
-                "controlId" : "CTRL-007",
-                "description": "SOX Controls for Module 07",
-                "controlType" : "SOX CONTROL",
-                "modifiedDate" : "Trilok",
-                "modifiedBy" : "1/1/2017"
-        },
-        {
-                "controlId" : "CTRL-008",
-                "description": "SOX Controls for Module 08",
-                "controlType" : "SOX CONTROL",
-                "modifiedDate" : "Trilok",
-                "modifiedBy" : "1/1/2017"
-        },
-        {
-                "controlId" : "CTRL-009",
-                "description": "SOX Controls for Module 09",
-                "controlType" : "SOX CONTROL",
-                "modifiedDate" : "Trilok",
-                "modifiedBy" : "1/1/2017"
-        },
-        {
-                "controlId" : "CTRL-010",
-                "description": "SOX Controls for Module 10",
-                "controlType" : "SOX CONTROL",
-                "modifiedDate" : "Trilok",
-                "modifiedBy" : "1/1/2017"
-        }
-    ];
+    controls : IControl[];
 
     processClick(control : IControl) : void {
         alert("Clicked " + control.controlId);
+    }
+
+    ngOnInit() : void {
+        this._controlService.getControls()
+            .subscribe(
+                controls => this.controls = controls,
+                error => this.errorMessage = <any>error);
     }
 }
