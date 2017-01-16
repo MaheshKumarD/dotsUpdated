@@ -1,0 +1,18 @@
+<div class="panel-body">
+    <div class="panel">
+        <div class="panel panel-primary">
+            <b class="col-md-2 panel-primary">Name</b>
+            <b class="col-md-4 panel-primary">Id</b>
+            <b class="col-md-2 panel-primary">Description</b>
+            <b class="col-md-2 panel-primary"> Modified Date</b>
+            <b class="col-md-2 panel-primary">Modified By</b>
+
+        </div>
+        <div ng-class-odd="'panel-e'" *ngFor='let object of objects' class="display:block; panel-info">
+            <span class="col-md-2">{{ object.name }}</span>
+            <span class="col-md-4">{{ object.objectId }}</span>
+            <span class="col-md-2">{{ object.description }}</span>
+            <span class="col-md-2">{{ object.modifiedDate | date }}</span>
+            <span class="col-md-2">{{ object.modifiedBy }}</span>
+        </div>
+</div>

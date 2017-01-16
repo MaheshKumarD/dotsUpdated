@@ -1,6 +1,6 @@
 export interface IObject {
+    objectId : string;
     name : string;
-    id : string;
     modifiedBy : string;
     modifiedDate : Date;
     description : string;

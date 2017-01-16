@@ -23,12 +23,12 @@
       </button>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Controls</a></li>
-        <li><a href="#">Objects</a></li>
-        <li><a href="#">System Admin</a></li> 
-        <li><a href="#">User Admin</a></li> 
-      </ul>
+        <ul class="nav navbar-nav">
+            <li><a [routerLink]="['/controls']">Controls</a></li>
+            <li><a [routerLink]="['/objects']">Objects</a></li>
+            <li><a [routerLink]="['/sysadmin']">System Admin</a></li>
+            <li><a [routerLink]="['/users']">User Admin</a></li>
+        </ul>
     </div>
   </div>
 </nav>
@@ -36,7 +36,7 @@
 
     <div id="content-container" class="container">
         <div class="row" id="content">
-            <audit-controls></audit-controls>
+            <router-outlet></router-outlet>
         </div>
 
         <div id="footer">

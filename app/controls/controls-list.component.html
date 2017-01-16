@@ -19,12 +19,12 @@
             <b class="col-md-2 panel-primary">Modified By</b>
 
         </div>
-        <a *ngFor='let control of controls'  href="#" class="display:block; panel-info">
+        <a *ngFor='let control of controls'  [routerLink]="['/control-details', control.controlId]" class="display:block; panel-info">
         <div ng-class-odd="'panel-e'">
             <span class="col-md-2">{{ control.controlId }}</span>
             <span class="col-md-4">{{ control.description }}</span>
             <span class="col-md-2">{{ control.controlType }}</span>
-            <span class="col-md-2">{{ control.modifiedDate }}</span>
+            <span class="col-md-2">{{ control.modifiedDate | date }}</span>
             <span class="col-md-2">{{ control.modifiedBy }}</span>
         </div>
         </a>
